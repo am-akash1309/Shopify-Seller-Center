@@ -1,0 +1,73 @@
+.shopify{
+    font-family: 'Lucida Handwriting';
+    font-weight: bolder;
+    padding-left: 8px !important;
+
+}
+.sellercenter{
+    font-family: 'Sofia';
+    font-size: 40px !important;
+    padding-right: 10px !important;
+}
+.sponser{
+    font-size: small !important;
+    padding-top: 15px !important;
+    padding-left: 5px !important;
+}
+.sponsername{
+    color: blueviolet;
+    font-weight: bold;
+    font-family: Lucida Handwriting;
+}
+.carousel .carousel-item{
+    width:100%;
+}
+.formspace{
+    margin: 20px 0px 20px 0px;
+}
+/* label color */
+.input-field label {
+    color: rgb(139, 63, 194);
+    font-weight: bold;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label, .input-field input[type=number]:focus + label {
+    color: rgb(139, 63, 194) !important;
+    font-weight: bold !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus,.input-field input[type=number]:focus {
+    color: black;
+    font-weight: bold !important;
+    border-bottom: 1px solid rgb(49, 134, 245) !important;
+    box-shadow: 0 1px 0 0 rgb(66, 78, 241);
+}
+input[type=text]:not(.browser-default),input[type=number]:not(.browser-default){
+    border-bottom: 1px solid #fa6868;
+    color: black;
+    font-weight: bold !important;
+}
+  /* valid color */
+.input-field input[type=text].valid, .input-field input[type=number].valid {
+    border-bottom: 1px solid rgb(40, 218, 69);
+    box-shadow: 0 1px 0 0 rgb(23, 241, 52);
+}
+  /* invalid color */
+.input-field input[type=text].invalid, .input-field input[type=number].invalid {
+    border-bottom: 1px solid rgb(255, 0, 0);
+    box-shadow: 0 1px 0 0 rgb(255, 0, 0);
+}
+  /* icon prefix focus color */
+.input-field .prefix.active {
+    color: #000;
+}
+.helper-text{
+    color: cornflowerblue !important;
+}
+.productaddbtn{
+    background-color: blue !important;
+    border-radius: 6px !important;
+}
+.text{
+    padding-top: 15px;
+}

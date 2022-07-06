@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>
+            Shopify Seller Center
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="seller center.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+        <script src="./seller_center.js"></script>
+
+
+    </head>
+    <body class="blue lighten-4" ng-app="seller_center" ng-controller="catbot">
+        <nav class="nav-extended green darken-1">
+            <div class="nav-wrapper">
+                <h5 class="brand-logo left shopify">Shopify</h5>
+                <p class="brand-logo left sponser">Powered by <a class="sponsername">TextWish</a></p>
+                <h6 class="brand-logo right sellercenter">Seller Center</h6>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent tabs-fixed-width">
+                    <li class="tab"><a id="callhome" href="#home">home</a></li>
+                    <li class="tab"><a id="calladdproduct" href="#addproduct">add product</a></li>
+                    <li class="tab"><a href="#orders">orders</a></li>
+                    <li class="tab"><a href="#pricing">pricing</a></li>
+                    <li class="tab"><a href="#advertising">advertising</a></li>
+                    <li class="tab"><a href="#reports">reports</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="home" class="col s12">
+            <table class="striped highlight centered responsive-table" ng-if="check">
+                <thead>
+                  <tr>
+                      <th>Product Name</th>
+                      <th>Seller Name</th>
+                      <th>Price per Unit</th>
+                      <th>Total Units Available</th>
+                      <th>Total Price</th>
+                  </tr>
+                </thead>
+        
+                <tbody>
+                    <tr ng-repeat="element in list">
+                        <td>{{element.name}}</td>
+                        <td>{{element.seller + ", "}}{{element.country}}</td>
+                        <td>{{element.price | currency : "₹"}}</td>
+                        <td>{{element.quantity}}</td>
+                        <td>{{element.price * element.quantity | currency : "₹"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="center text" ng-show="!(check)">
+                There are no products to show. Please <a onclick="document.getElementById('calladdproduct').click()">Add Products</a> to sell them.
+            </div>
+        </div>
+        <div id="addproduct" class="col s12">
+            <form class="formspace">
+                <div class="row">
+                    <div class="input-field col s8 offset-s2">
+                        <input id="productname" type="text" ng-model="productname" class="validate" required>
+                        <label for="productname">Product Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4 offset-s2">
+                        <input id="seller" type="text" class="validate" ng-model="seller" required>
+                        <label for="seller">Seller</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="country" type="text" class="validate" ng-model="country">
+                        <label for="country">Country Of Origin</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4 offset-s2">
+                        <input id="Price" type="number" class="validate" ng-model="price" required>
+                        <label for="Price">Price</label>
+                        <span class="helper-text" data-error="Please Enter a Number" data-success="">Ex: 199.00</span>
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="Quantity" type="number" class="validate" ng-model="quantity" required>
+                        <label for="Quantity">Quantity</label>
+                        <span class="helper-text" data-error="Please Enter a Number" data-success="">Ex: 299</span>
+                    </div>
+                </div>
+                <div class="center">
+                    <a class="btn productaddbtn"  ng-click="add()" onclick="document.getElementById('callhome').click()">ADD</a>
+                </div>
+            </form>
+        </div>
+        <div id="orders" class="col s12">
+            <!-- Test 3 -->
+        </div>
+        <div id="pricing" class="col s12">
+            <!-- Test 4 -->
+        </div>
+        <div id="advertising" class="col s12">
+            <!-- Test 4 -->
+        </div>
+        <div id="reports" class="col s12 center">
+            <div class="text">No Reports</div>
+        </div>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </body>
+</html>
